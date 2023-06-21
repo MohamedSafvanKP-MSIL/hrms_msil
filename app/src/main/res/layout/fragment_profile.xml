@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="279dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Name: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/ageTextView"
+        android:layout_width="278dp"
+        android:layout_height="49dp"
+        android:layout_below="@id/nameTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="12dp"
+        android:text="Age: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/qualificationTextView"
+        android:layout_width="279dp"
+        android:layout_height="53dp"
+        android:layout_below="@id/ageTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Qualification: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/workExperienceTextView"
+        android:layout_width="288dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/qualificationTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="14dp"
+        android:text="Work Experience: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/softSkillsTextView"
+        android:layout_width="288dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/workExperienceTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="22dp"
+        android:text="Soft Skills: "
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="203dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="111dp"
+        android:layout_marginBottom="163dp"
+        android:text="Logout" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="43dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="41dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="38dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="35dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="29dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+</RelativeLayout>
