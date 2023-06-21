@@ -24,9 +24,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="2dp"
-        android:text="Sick Leave"
-        android:textColor="#287bc7"
         android:gravity="center_horizontal"
+        android:text="Sick Leave"
+        android:textColor="#088C87"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/etSickLeaveLeft"
         android:layout_centerHorizontal="true"
-        android:textColor="#287bc7"
+        android:textColor="#088C87"
         android:gravity="center_horizontal"
         android:text="Casual Leaves"
         android:layout_marginStart="30dp"
@@ -123,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/etCasualLeaveLeft"
         android:layout_centerHorizontal="true"
-        android:textColor="#287bc7"
+        android:textColor="#088C87"
         android:gravity="center_horizontal"
         android:layout_marginStart="30dp"
         android:text="Medical Leaves"
@@ -173,7 +173,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/etMedicalLeaveLeft"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/btn_fullcolour"
-        android:text="Apply For Leave" />
+        android:background="@drawable/btn_outline"
+        android:text="Apply For Leave"
+        android:textColor="@color/black"
+        android:textColorLink="#10E1D9" />
 
 </RelativeLayout>

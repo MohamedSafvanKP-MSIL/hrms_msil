@@ -1,5 +1,6 @@
 package com.example.hrms_msil;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -135,6 +136,7 @@ public class LeavesFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateLeaveDetails(EditText etTotal, EditText etUsed, EditText etLeft, LeaveType leaveType) {
         etTotal.setText("Total Leaves: " + leaveType.getTotalLeaves());
         etUsed.setText("Used Leaves: " + leaveType.getUsedLeaves());
