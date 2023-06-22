@@ -7,31 +7,38 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp">
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/date1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="date1"
             android:layout_marginStart="20dp"
             android:textSize="20sp"/>
         <TextView
-            android:id="@+id/empid"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EmpId"
+            android:text="title"
             android:textSize="20sp"
-            android:layout_marginStart="150dp"/>
+            android:layout_marginStart="120dp"/>
         <TextView
-            android:id="@+id/years"
+            android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Years"
-            android:layout_marginStart="270dp"
+            android:text="message"
+            android:layout_marginStart="200dp"
             android:textSize="20sp"/>
 
+        <TextView
+            android:id="@+id/priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="priority"
+            android:layout_marginStart="300dp"
+            android:textSize="20sp"/>
+
+
     </androidx.cardview.widget.CardView>
-
-
-
 </RelativeLayout>

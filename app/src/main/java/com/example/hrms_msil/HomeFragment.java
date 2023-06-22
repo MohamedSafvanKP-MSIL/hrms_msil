@@ -14,7 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.hrms_msil.pojo.AnnouncementsItem;
+import com.example.hrms_msil.pojo.HolidaysItem;
+import com.example.hrms_msil.pojo.HomeResponse;
+import com.example.hrms_msil.pojo.WorkAnniversaryItem;
+
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,15 +29,18 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-    private HomeApi api;
-    private HomeAdapter homeAdapter;
+    RecyclerView recyclerView1,recyclerView2,recyclerView3;
+    HomeAdapter homeAdapter;
+    HolidayAdapter holidayAdapter;
+    AnnounceAdapter announceAdapter;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = view.findViewById(R.id.recyclerview);
+        recyclerView1 = view.findViewById(R.id.recyclerview1);
+        recyclerView2 = view.findViewById(R.id.recyclerview2);
+        recyclerView3 = view.findViewById(R.id.recyclerview3);
         return view;
     }
 
@@ -39,32 +48,100 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         handle();
+//        handle1();
+//        handle2();
     }
 
     private void handle() {
-        api = HomeClientInstance.getRetrofitInstances().create(HomeApi.class);
+        HomeApi  api = HomeClientInstance.getRetrofitInstances().create(HomeApi.class);
 
 
-        Call<HomePojo> call = api.getAllData();
-        call.enqueue(new Callback<HomePojo>() {
+        Call<HomeResponse> call = api.getAllData();
+        call.enqueue(new Callback<HomeResponse>() {
             @Override
-            public void onResponse(Call<HomePojo> call, Response<HomePojo> response) {
-                Log.d("Bala", String.valueOf(response));
+            public void onResponse(Call<HomeResponse> call, Response<HomeResponse> response) {
                 if (response.isSuccessful()) {
-                    ArrayList<HomePojo.WorkAnniversary> workAnniversary = response.body().getWorkAnniversary();
-                    ArrayList<HomePojo.Holidays> holidays = response.body().getHolidays();
-                    ArrayList<HomePojo.Announcements> announcements = response.body().getAnnouncements();
+                    HomeResponse workAnniversary = response.body();
+                    List<HolidaysItem> holidays = workAnniversary.getData().getHolidays();
+                    List<AnnouncementsItem> announcements = workAnniversary.getData().getAnnouncements();
+                    List<WorkAnniversaryItem> workAnn = workAnniversary.getData().getWorkAnniversary();
 
-                    homeAdapter = new HomeAdapter(workAnniversary,holidays,announcements);
-                    recyclerView.setAdapter(homeAdapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+                    homeAdapter = new HomeAdapter(workAnn);
+                    recyclerView1.setAdapter(homeAdapter);
+                    recyclerView1.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                    holidayAdapter = new HolidayAdapter(holidays);
+                    recyclerView2.setAdapter(holidayAdapter);
+                    recyclerView2.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                    announceAdapter = new AnnounceAdapter(announcements);
+                    recyclerView3.setAdapter(announceAdapter);
+                    recyclerView3.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
                 } else {
                     Toast.makeText(requireContext(), response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<HomePojo> call, Throwable t) {
+            public void onFailure(Call<HomeResponse> call, Throwable t) {
+                Toast.makeText(requireContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void handle1() {
+        HomeApi  api = HomeClientInstance.getRetrofitInstances().create(HomeApi.class);
+
+        Call<HomeResponse> call = api.getAllData();
+        call.enqueue(new Callback<HomeResponse>() {
+            @Override
+            public void onResponse(Call<HomeResponse> call, Response<HomeResponse> response) {
+                if (response.isSuccessful()) {
+
+                    HomeResponse workAnniversary = response.body();
+                    List<HolidaysItem> holidays = workAnniversary.getData().getHolidays();
+
+                    holidayAdapter = new HolidayAdapter(holidays);
+                    recyclerView2.setAdapter(holidayAdapter);
+                    recyclerView2.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                } else {
+                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HomeResponse> call, Throwable t) {
+                Toast.makeText(requireContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void handle2() {
+        HomeApi  api = HomeClientInstance.getRetrofitInstances().create(HomeApi.class);
+
+        Call<HomeResponse> call = api.getAllData();
+        call.enqueue(new Callback<HomeResponse>() {
+            @Override
+            public void onResponse(Call<HomeResponse> call, Response<HomeResponse> response) {
+                if (response.isSuccessful()) {
+
+                    HomeResponse workAnniversary = response.body();
+                    List<AnnouncementsItem> announcements = workAnniversary.getData().getAnnouncements();
+
+                    announceAdapter = new AnnounceAdapter(announcements);
+                    recyclerView3.setAdapter(announceAdapter);
+                    recyclerView3.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                } else {
+                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HomeResponse> call, Throwable t) {
                 Toast.makeText(requireContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
