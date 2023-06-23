@@ -9,27 +9,26 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        android:scrollbars="horizontal"/>
+        tools:layout_editor_absoluteX="0dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    +<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/recyclerview1"
-        tools:layout_editor_absoluteX="29dp"
-        android:orientation="horizontal"/>
+        tools:layout_editor_absoluteX="100dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview3"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/recyclerview2"
-        tools:layout_editor_absoluteX="28dp"
-        android:orientation="horizontal"/>
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

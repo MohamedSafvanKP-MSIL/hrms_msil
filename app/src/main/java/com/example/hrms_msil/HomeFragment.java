@@ -1,5 +1,7 @@
 package com.example.hrms_msil;
 
+import static android.widget.LinearLayout.HORIZONTAL;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -27,7 +29,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-
 public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView1,recyclerView2,recyclerView3;
@@ -49,6 +50,8 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         handle();
+//        handle1();
+//        handle2();
     }
 
     private void handle() {
@@ -67,15 +70,15 @@ public class HomeFragment extends Fragment {
 
                     homeAdapter = new HomeAdapter(workAnn);
                     recyclerView1.setAdapter(homeAdapter);
-                    recyclerView1.setLayoutManager(new LinearLayoutManager(getContext()));
+                    recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL,true));
 
                     holidayAdapter = new HolidayAdapter(holidays);
                     recyclerView2.setAdapter(holidayAdapter);
-                    recyclerView2.setLayoutManager(new LinearLayoutManager(getContext()));
+                    recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,true));
 
                     announceAdapter = new AnnounceAdapter(announcements);
                     recyclerView3.setAdapter(announceAdapter);
-                    recyclerView3.setLayoutManager(new LinearLayoutManager(getContext()));
+                    recyclerView3.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,true));
 
 
                 } else {
@@ -89,6 +92,5 @@ public class HomeFragment extends Fragment {
             }
         });
     }
-
 
 }
