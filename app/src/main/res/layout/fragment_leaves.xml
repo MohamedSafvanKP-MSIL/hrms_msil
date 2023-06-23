@@ -32,8 +32,7 @@
         android:text="Sick Leave"
         android:background="@drawable/btn_fullcolour"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/etSickLeaveTotal"
@@ -83,8 +82,7 @@
         android:background="@drawable/btn_fullcolour"
         android:text="Casual Leaves"
         android:gravity="center_horizontal"
-        android:textSize="20dp"
-     />
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/etCasualLeaveTotal"
@@ -120,8 +118,7 @@
         android:focusable="false"
         android:inputType="number"
         android:hint="Casual Leaves Left"
-        android:textSize="15dp"
-        />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/tvMedicalLeave"
@@ -134,8 +131,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:gravity="center_horizontal"
-        android:textSize="20dp"
-         />
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/etMedicalLeaveTotal"
@@ -159,8 +155,7 @@
         android:focusable="false"
         android:inputType="number"
         android:hint="Used Medical Leaves"
-        android:textSize="15dp"
-        />
+        android:textSize="15dp" />
 
     <EditText
         android:id="@+id/etMedicalLeaveLeft"
@@ -177,7 +172,7 @@
     <Button
         android:id="@+id/btnApplyLeave"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/etMedicalLeaveLeft"
         android:layout_centerHorizontal="true"
         android:background="@drawable/btn_outline"
