@@ -1,34 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical">
+    android:scrollbars="vertical"
+    android:background="@drawable/img">
 
 
     <TextView
         android:id="@+id/leaves"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_height="40dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/btn_outline"
         android:gravity="center_horizontal"
         android:text="LEAVES DETAILS"
-        android:textColor="@color/black"
+        android:textColor="#D5FFFFFF"
         android:textSize="25dp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvSickLeave"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/leaves"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="2dp"
+        android:layout_height="30dp"
         android:gravity="center_horizontal"
+        android:layout_below="@+id/leaves"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:text="Sick Leave"
-        android:textColor="#088C87"
+        android:background="@drawable/btn_fullcolour"
+        android:textColor="@color/white"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        />
 
     <EditText
         android:id="@+id/etSickLeaveTotal"
@@ -70,15 +75,16 @@
     <TextView
         android:id="@+id/tvCasualLeave"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etSickLeaveLeft"
-        android:layout_centerHorizontal="true"
-        android:textColor="#088C87"
-        android:gravity="center_horizontal"
-        android:text="Casual Leaves"
+        android:layout_height="30dp"
         android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@id/etSickLeaveLeft"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_fullcolour"
+        android:text="Casual Leaves"
+        android:gravity="center_horizontal"
         android:textSize="20dp"
-        android:textStyle="bold" />
+     />
 
     <EditText
         android:id="@+id/etCasualLeaveTotal"
@@ -120,15 +126,16 @@
     <TextView
         android:id="@+id/tvMedicalLeave"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_below="@id/etCasualLeaveLeft"
-        android:layout_centerHorizontal="true"
-        android:textColor="#088C87"
-        android:gravity="center_horizontal"
-        android:layout_marginStart="30dp"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_fullcolour"
         android:text="Medical Leaves"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center_horizontal"
         android:textSize="20dp"
-        android:textStyle="bold" />
+         />
 
     <EditText
         android:id="@+id/etMedicalLeaveTotal"
@@ -175,7 +182,6 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/btn_outline"
         android:text="Apply For Leave"
-        android:textColor="@color/black"
-        android:textColorLink="#10E1D9" />
+        android:textColor="@color/white" />
 
 </RelativeLayout>
