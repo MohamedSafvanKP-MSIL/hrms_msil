@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+
+    <TextView
+        android:id="@+id/leaves"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="LEAVES DETAILS"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSickLeave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/leaves"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="2dp"
+        android:text="Sick Leave"
+        android:textColor="#287bc7"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etSickLeaveTotal"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvSickLeave"
+        android:layout_marginTop="0dp"
+        android:enabled="false"
+        android:focusable="false"
+        android:hint="Total Sick Leave"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/etSickLeaveUsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etSickLeaveTotal"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:focusable="false"
+        android:inputType="number"
+        android:hint="Used Sick Leave" />
+
+    <EditText
+        android:id="@+id/etSickLeaveLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_below="@id/etSickLeaveUsed"
+        android:enabled="false"
+        android:textSize="15dp"
+        android:focusable="false"
+        android:inputType="number"
+        android:hint="Sick Leave Left" />
+
+    <TextView
+        android:id="@+id/tvCasualLeave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etSickLeaveLeft"
+        android:layout_centerHorizontal="true"
+        android:textColor="#287bc7"
+        android:gravity="center_horizontal"
+        android:text="Casual Leaves"
+        android:layout_marginStart="30dp"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etCasualLeaveTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCasualLeave"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:focusable="false"
+        android:inputType="number"
+        android:hint="Total Casual Leaves" />
+
+    <EditText
+        android:id="@+id/etCasualLeaveUsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etCasualLeaveTotal"
+        android:enabled="false"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:focusable="false"
+        android:inputType="number"
+        android:hint="Used Casual Leaves" />
+
+    <EditText
+        android:id="@+id/etCasualLeaveLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etCasualLeaveUsed"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:focusable="false"
+        android:inputType="number"
+        android:hint="Casual Leaves Left"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/tvMedicalLeave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etCasualLeaveLeft"
+        android:layout_centerHorizontal="true"
+        android:textColor="#287bc7"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:text="Medical Leaves"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etMedicalLeaveTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMedicalLeave"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:focusable="false"
+        android:inputType="number"
+        android:textSize="15dp"
+        android:hint="Total Medical Leaves" />
+
+    <EditText
+        android:id="@+id/etMedicalLeaveUsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etMedicalLeaveTotal"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:focusable="false"
+        android:inputType="number"
+        android:hint="Used Medical Leaves"
+        android:textSize="15dp"
+        />
+
+    <EditText
+        android:id="@+id/etMedicalLeaveLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etMedicalLeaveUsed"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:focusable="false"
+        android:inputType="number"
+        android:textSize="15dp"
+        android:hint="Medical Leaves Left" />
+
+    <Button
+        android:id="@+id/btnApplyLeave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etMedicalLeaveLeft"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_fullcolour"
+        android:text="Apply For Leave" />
+
+</RelativeLayout>
