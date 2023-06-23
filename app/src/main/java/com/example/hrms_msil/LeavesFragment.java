@@ -1,60 +1,166 @@
 package com.example.hrms_msil;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class LeavesFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String LEAVE_PREFS_NAME = "LeavePrefs";
+    private static final String SICK_LEAVE = "Sick Leave";
+    private static final String CASUAL_LEAVE = "Casual Leave";
+    private static final String MEDICAL_LEAVE = "Medical Leave";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private LeaveType sickLeave;
+    private LeaveType casualLeave;
+    private LeaveType medicalLeave;
 
-    public LeavesFragment() {
-        // Required empty public constructor
-    }
+    private EditText etSickLeaveTotal, etSickLeaveUsed, etSickLeaveLeft;
+    private EditText etCasualLeaveTotal, etCasualLeaveUsed, etCasualLeaveLeft;
+    private EditText etMedicalLeaveTotal, etMedicalLeaveUsed, etMedicalLeaveLeft;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment LeavesFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static LeavesFragment newInstance(String param1, String param2) {
-        LeavesFragment fragment = new LeavesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private Button btnApplyLeave;
+    private BottomSheetDialog bottomSheetDialog;
 
+    private SharedPreferences leavePrefs;
+
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_leaves, container, false);
+
+        leavePrefs = requireContext().getSharedPreferences(LEAVE_PREFS_NAME, requireContext().MODE_PRIVATE);
+
+        sickLeave = new LeaveType(SICK_LEAVE, 12);
+        casualLeave = new LeaveType(CASUAL_LEAVE, 13);
+        medicalLeave = new LeaveType(MEDICAL_LEAVE, 15);
+
+        etSickLeaveTotal = rootView.findViewById(R.id.etSickLeaveTotal);
+        etSickLeaveUsed = rootView.findViewById(R.id.etSickLeaveUsed);
+        etSickLeaveLeft = rootView.findViewById(R.id.etSickLeaveLeft);
+
+        etCasualLeaveTotal = rootView.findViewById(R.id.etCasualLeaveTotal);
+        etCasualLeaveUsed = rootView.findViewById(R.id.etCasualLeaveUsed);
+        etCasualLeaveLeft = rootView.findViewById(R.id.etCasualLeaveLeft);
+
+        etMedicalLeaveTotal = rootView.findViewById(R.id.etMedicalLeaveTotal);
+        etMedicalLeaveUsed = rootView.findViewById(R.id.etMedicalLeaveUsed);
+        etMedicalLeaveLeft = rootView.findViewById(R.id.etMedicalLeaveLeft);
+
+        updateLeaveDetails(etSickLeaveTotal, etSickLeaveUsed, etSickLeaveLeft, sickLeave);
+        updateLeaveDetails(etCasualLeaveTotal, etCasualLeaveUsed, etCasualLeaveLeft, casualLeave);
+        updateLeaveDetails(etMedicalLeaveTotal, etMedicalLeaveUsed, etMedicalLeaveLeft, medicalLeave);
+
+        btnApplyLeave = rootView.findViewById(R.id.btnApplyLeave);
+
+        btnApplyLeave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheet();
+            }
+        });
+
+        return rootView;
+    }
+
+    private void showBottomSheet() {
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_leaves, null);
+
+        bottomSheetDialog = new BottomSheetDialog(requireContext());
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RadioGroup rgLeaveOptions = bottomSheetView.findViewById(R.id.rgLeaveOptions);
+        Button btnApply = bottomSheetView.findViewById(R.id.btnApply);
+
+        btnApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedId = rgLeaveOptions.getCheckedRadioButtonId();
+                if (selectedId != -1) {
+                    RadioButton radioButton = bottomSheetDialog.findViewById(selectedId);
+                    String selectedLeaveType = radioButton.getText().toString();
+                    applyLeave(selectedLeaveType);
+
+                    bottomSheetDialog.dismiss();
+                } else {
+                    Toast.makeText(requireContext(), "Select a type of leave", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        bottomSheetDialog.show();
+    }
+
+    private void applyLeave(String leaveType) {
+        LeaveType selectedLeaveType = null;
+
+        switch (leaveType) {
+            case SICK_LEAVE:
+                selectedLeaveType = sickLeave;
+                break;
+            case CASUAL_LEAVE:
+                selectedLeaveType = casualLeave;
+                break;
+            case MEDICAL_LEAVE:
+                selectedLeaveType = medicalLeave;
+                break;
+        }
+
+        if (selectedLeaveType != null && selectedLeaveType.getAvailableLeaves() > 0) {
+            selectedLeaveType.reduceLeaveCount();
+            String message = leaveType + " leave applied\n" +
+                    "Leaves left: " + selectedLeaveType.getAvailableLeaves();
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+
+            updateLeaveDetails(etSickLeaveTotal, etSickLeaveUsed, etSickLeaveLeft, sickLeave);
+            updateLeaveDetails(etCasualLeaveTotal, etCasualLeaveUsed, etCasualLeaveLeft, casualLeave);
+            updateLeaveDetails(etMedicalLeaveTotal, etMedicalLeaveUsed, etMedicalLeaveLeft, medicalLeave);
+
+            saveLeaveDetails(selectedLeaveType);
+        } else {
+            Toast.makeText(requireContext(), "No more " + leaveType + " leaves available", Toast.LENGTH_SHORT).show();
         }
     }
 
+    private void updateLeaveDetails(EditText etTotal, EditText etUsed, EditText etLeft, LeaveType leaveType) {
+        etTotal.setText("Total Leaves: " + leaveType.getTotalLeaves());
+        etUsed.setText("Used Leaves: " + leaveType.getUsedLeaves());
+        etLeft.setText("Leaves Left: " + leaveType.getAvailableLeaves());
+    }
+
+    private void saveLeaveDetails(LeaveType leaveType) {
+        SharedPreferences.Editor editor = leavePrefs.edit();
+        editor.putInt(leaveType.getName() + "_Used", leaveType.getUsedLeaves());
+        editor.apply();
+    }
+
+    private void loadLeaveDetails(LeaveType leaveType) {
+        int usedLeaves = leavePrefs.getInt(leaveType.getName() + "_Used", 0);
+        leaveType.setUsedLeaves(usedLeaves);
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_leaves, container, false);
+    public void onResume() {
+        super.onResume();
+        loadLeaveDetails(sickLeave);
+        loadLeaveDetails(casualLeave);
+        loadLeaveDetails(medicalLeave);
+        updateLeaveDetails(etSickLeaveTotal, etSickLeaveUsed, etSickLeaveLeft, sickLeave);
+        updateLeaveDetails(etCasualLeaveTotal, etCasualLeaveUsed, etCasualLeaveLeft, casualLeave);
+        updateLeaveDetails(etMedicalLeaveTotal, etMedicalLeaveUsed, etMedicalLeaveLeft, medicalLeave);
     }
 }
+
