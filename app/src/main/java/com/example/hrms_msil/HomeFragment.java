@@ -27,7 +27,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-
 public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView1,recyclerView2,recyclerView3;
@@ -49,6 +48,8 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         handle();
+//        handle1();
+//        handle2();
     }
 
     private void handle() {
@@ -89,6 +90,5 @@ public class HomeFragment extends Fragment {
             }
         });
     }
-
 
 }
