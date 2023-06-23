@@ -1,14 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ProfileFragment">
+    android:background="@drawable/blue1">
 
 
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="124dp"
+        android:layout_marginBottom="81dp"
+        android:background="@drawable/logout_background"
+        android:textColor="@color/black"
+        android:text="Logout" />
 
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="133dp"
+        android:layout_marginEnd="68dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="197dp"
+        android:layout_marginEnd="68dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="68dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="308dp"
+        android:layout_marginEnd="68dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="368dp"
+        android:layout_marginEnd="68dp"
+        android:src="@drawable/baseline_edit_note_24" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="133dp"
+        android:text="Name: "
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/ageTextView"
+        android:layout_width="253dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/nameTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
+        android:text="Age: "
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/qualificationTextView"
+        android:layout_width="248dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/ageTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
+        android:text="Qualification: "
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/workExperienceTextView"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_below="@id/qualificationTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="10dp"
+        android:text="Work Experience: "
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/softSkillsTextView"
+        android:layout_width="251dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/workExperienceTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="Soft Skills: "
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <ImageView
+        android:id="@+id/imageview1thumb"
+        android:layout_width="61dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="192dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img">
+
+    </ImageView>
 
 
 </RelativeLayout>
