@@ -58,9 +58,14 @@ public class InboxFragment extends Fragment {
                     ArrayList<InboxPojo.data> inboxData1 = response.body().getData();
 
 
+
                     inboxAdapter = new InboxAdapter(inboxData1);
                     recyclerView.setAdapter(inboxAdapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                    inboxAdapter = new InboxAdapter(inboxData1);
+                    recyclerView.setAdapter(inboxAdapter);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
                 } else {
                     Toast.makeText(requireContext(), "fail", Toast.LENGTH_SHORT).show();
                 }

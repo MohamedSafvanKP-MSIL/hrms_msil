@@ -5,11 +5,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface InboxApi {
-
-
-
+ Inbox_updated1
     @POST("serviece/0/inbox")
     Call<InboxPojo> createPost(@Body InboxPojo inboxPojo);
-
-
 }

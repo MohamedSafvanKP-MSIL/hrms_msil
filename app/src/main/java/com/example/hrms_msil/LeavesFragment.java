@@ -163,3 +163,4 @@ public class LeavesFragment extends Fragment {
         updateLeaveDetails(etMedicalLeaveTotal, etMedicalLeaveUsed, etMedicalLeaveLeft, medicalLeave);
     }
 }
+
