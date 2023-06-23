@@ -2,26 +2,57 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:scrollbars="horizontal">
-
-    <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="0dp"
+    android:scrollbars="horizontal"
+    android:background="#DF618C">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
+        <!-- Place your CardView inside the ScrollView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date: "
-            android:textStyle="bold" />
+            android:layout_margin="5dp"
+            android:background="#C16886">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#C3B4DD">
+                <TextView
+                    android:id="@+id/date11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date: "
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date: "
+                    android:textSize="20dp"/>
+                <TextView
+                    android:id="@+id/occasion11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Occasion: "
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:id="@+id/occasion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Occasion: "
+                    android:textSize="20dp"/>
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/occasion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Occasion: " />
-    </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
 </androidx.cardview.widget.CardView>

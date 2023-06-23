@@ -1,6 +1,9 @@
 package com.example.hrms_msil;
 
 import java.util.ArrayList;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.TextUtils;
 
 public class InboxPojo {
 

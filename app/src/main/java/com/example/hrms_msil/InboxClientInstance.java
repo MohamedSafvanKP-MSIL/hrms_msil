@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class InboxClientInstance {
-    private static final String BASE_URL = "https://3eb04e18-69b1-445e-99ae-6558cb6df52f.mock.pstmn.io/";
+    private static final String BASE_URL = " https://run.mocky.io/v3/cd848404-121c-47f7-abdf-8884b361cc03/";
 
     public static Retrofit getRetrofitInstance() {
         return new Retrofit.Builder()
