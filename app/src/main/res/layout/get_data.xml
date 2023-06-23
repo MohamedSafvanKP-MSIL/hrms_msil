@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"/>
+            android:text="Name: "
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/empid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EmpId"
-            android:textSize="20sp"
-            android:layout_marginStart="150dp"/>
+            android:text="Employee ID: " />
+
         <TextView
             android:id="@+id/years"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Years"
-            android:layout_marginStart="270dp"
-            android:textSize="20sp"/>
+            android:text="Years: " />
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
-
-
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
