@@ -1,6 +1,11 @@
 package com.example.hrms_msil;
 
+import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +21,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +30,7 @@ import android.widget.TextView;
 
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -35,8 +42,11 @@ public class ProfileFragment extends Fragment {
     private TextView qualificationTextView;
     private TextView workExperienceTextView;
     private TextView softSkillsTextView;
-    private ImageButton imageButton1,imageButton2,imageButton3,imageButton4,imageButton5;
+
     private Button logoutButton;
+    private ImageView profile,edit1,edit2,edit3,edit4,edit5;
+
+    private SharedPreferences sharedPreference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,27 +60,35 @@ public class ProfileFragment extends Fragment {
         workExperienceTextView = view.findViewById(R.id.workExperienceTextView);
         softSkillsTextView = view.findViewById(R.id.softSkillsTextView);
         logoutButton = view.findViewById(R.id.logout_button);
+        profile=view.findViewById(R.id.imageview);
 
-        imageButton1 = view.findViewById(R.id.imageButton1);
-        imageButton2 = view.findViewById(R.id.imageButton2);
-        imageButton3 = view.findViewById(R.id.imageButton3);
-        imageButton4 = view.findViewById(R.id.imageButton4);
-        imageButton5 = view.findViewById(R.id.imageButton5);
-
-        String name = "Keerthana Devi";
-        int age = 21;
-        String qualification = "Bachelor's Degree";
-        int workExperience = 1;
-        String softSkills = "C++, Java, C";
-
-        nameTextView.setText("Name: " + name);
-        ageTextView.setText("Age: " + age);
-        qualificationTextView.setText("Qualification: " + qualification);
-        workExperienceTextView.setText("Work Experience: " + workExperience);
-        softSkillsTextView.setText("Soft Skills: " + softSkills);
+        edit1=view.findViewById(R.id.imageView1);
+        edit2=view.findViewById(R.id.imageView2);
+        edit3=view.findViewById(R.id.imageView3);
+        edit4=view.findViewById(R.id.imageView4);
+        edit5=view.findViewById(R.id.imageView5);
 
 
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        sharedPreference=requireContext().getSharedPreferences("share", Context.MODE_PRIVATE);
+
+        String name=sharedPreference.getString("Name","");
+        nameTextView.setText(""+name);
+
+        String age=sharedPreference.getString("Age","");
+        ageTextView.setText(""+age);
+
+        String qualification=sharedPreference.getString("Qualification","");
+        qualificationTextView.setText(""+qualification);
+
+        String work=sharedPreference.getString("Work Experience","");
+        workExperienceTextView.setText(""+work);
+
+        String soft=sharedPreference.getString("Soft Skills","");
+        softSkillsTextView.setText(""+soft);
+
+
+
+        edit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_name, null);
@@ -85,7 +103,10 @@ public class ProfileFragment extends Fragment {
                     public void onClick(View v) {
                         String editedName = editedNameEditText.getText().toString().trim();
                         if (!editedName.isEmpty()) {
-                            nameTextView.setText("Name: " + editedName);
+                            nameTextView.setText("" + editedName);
+                            SharedPreferences.Editor editor=sharedPreference.edit();
+                            editor.putString("Name",editedName);
+                            editor.apply();
                             bottomSheetDialog.dismiss();
                         } else {
                             Toast.makeText(requireContext(), "Please enter a valid name", Toast.LENGTH_SHORT).show();
@@ -97,7 +118,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        imageButton2.setOnClickListener(new View.OnClickListener() {
+        edit2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_age, null);
@@ -112,7 +133,10 @@ public class ProfileFragment extends Fragment {
                     public void onClick(View v) {
                         String editedAge = editedAgeEditText.getText().toString().trim();
                         if (!editedAge.isEmpty()) {
-                            ageTextView.setText("Age: " + editedAge);
+                            ageTextView.setText("" + editedAge);
+                            SharedPreferences.Editor editor=sharedPreference.edit();
+                            editor.putString("Age",editedAge);
+                            editor.apply();
                             bottomSheetDialog.dismiss();
                         } else {
                             Toast.makeText(requireContext(), "Please enter a valid age", Toast.LENGTH_SHORT).show();
@@ -124,7 +148,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        imageButton3.setOnClickListener(new View.OnClickListener() {
+      edit3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_qualification, null);
@@ -150,7 +174,10 @@ public class ProfileFragment extends Fragment {
                         }
 
                         if (!editedQualification.isEmpty()) {
-                            qualificationTextView.setText("Qualification: " + editedQualification);
+                            qualificationTextView.setText("" + editedQualification);
+                            SharedPreferences.Editor editor=sharedPreference.edit();
+                            editor.putString("Qualification",editedQualification);
+                            editor.apply();
                             bottomSheetDialog.dismiss();
                         } else {
                             Toast.makeText(requireContext(), "Please select a qualification", Toast.LENGTH_SHORT).show();
@@ -162,7 +189,8 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        imageButton4.setOnClickListener(new View.OnClickListener() {
+    edit4.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_work, null);
@@ -191,7 +219,10 @@ public class ProfileFragment extends Fragment {
                         }
 
                         if (!editedWork.isEmpty()) {
-                           workExperienceTextView.setText("Work Experience: " + editedWork);
+                           workExperienceTextView.setText("" + editedWork);
+                            SharedPreferences.Editor editor=sharedPreference.edit();
+                            editor.putString("Work Experience",editedWork);
+                            editor.apply();
                             bottomSheetDialog.dismiss();
                         } else {
                             Toast.makeText(requireContext(), "Please select a qualification", Toast.LENGTH_SHORT).show();
@@ -203,7 +234,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        imageButton5.setOnClickListener(new View.OnClickListener() {
+        edit5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_soft, null);
@@ -211,10 +242,20 @@ public class ProfileFragment extends Fragment {
                 bottomSheetDialog.setContentView(bottomSheetView);
 
                 CheckBox checkBox1 = bottomSheetView.findViewById(R.id.checkBox1);
+                boolean checkbox1=sharedPreference.getBoolean("checkbox1",false);
+                checkBox1.setChecked(checkbox1);
                 CheckBox checkBox2 = bottomSheetView.findViewById(R.id.checkBox2);
+                boolean checkbox2=sharedPreference.getBoolean("checkbox2",false);
+                checkBox1.setChecked(checkbox2);
                 CheckBox checkBox3 = bottomSheetView.findViewById(R.id.checkBox3);
+                boolean checkbox3=sharedPreference.getBoolean("checkbox3",false);
+                checkBox1.setChecked(checkbox3);
                 CheckBox checkBox4 = bottomSheetView.findViewById(R.id.checkBox4);
+                boolean checkbox4=sharedPreference.getBoolean("checkbox4",false);
+                checkBox1.setChecked(checkbox4);
                 CheckBox checkBox5 = bottomSheetView.findViewById(R.id.checkBox5);
+                boolean checkbox5=sharedPreference.getBoolean("checkbox5",false);
+                checkBox1.setChecked(checkbox5);
 
                 Button editButton = bottomSheetView.findViewById(R.id.button);
 
@@ -241,7 +282,15 @@ public class ProfileFragment extends Fragment {
                         String softSkills = selectedSkills.toString();
                         if (!softSkills.isEmpty()) {
                             softSkills = softSkills.substring(0, softSkills.length() - 2);
-                            softSkillsTextView.setText("Soft Skills: " + softSkills);
+                            softSkillsTextView.setText("" + softSkills);
+                            SharedPreferences.Editor editor=sharedPreference.edit();
+                            editor.putBoolean("checkbox1",checkBox1.isChecked());
+                            editor.putBoolean("checkbox2",checkBox1.isChecked());
+                            editor.putBoolean("checkbox3",checkBox1.isChecked());
+                            editor.putBoolean("checkbox4",checkBox1.isChecked());
+                            editor.putBoolean("checkbox5",checkBox1.isChecked());
+                            editor.putString("Soft Skills",softSkills);
+                            editor.apply();
                             bottomSheetDialog.dismiss();
                         } else {
                             Toast.makeText(requireContext(), "Please select at least one skill", Toast.LENGTH_SHORT).show();
@@ -255,12 +304,30 @@ public class ProfileFragment extends Fragment {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent4=new Intent(getContext(),LoginActivity.class);
-                startActivity(intent4);
+                AlertDialog.Builder builder=new AlertDialog.Builder(requireContext());
+                builder.setTitle("Log Out?");
+                builder.setMessage("Are you sure want to Log Out?");
+                builder.setPositiveButton("LogOut", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent=new Intent(getContext(),LoginActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                AlertDialog dialog=builder.create();
+                dialog.show();
             }
         });
 
 
         return view;
     }
+
+
 }
