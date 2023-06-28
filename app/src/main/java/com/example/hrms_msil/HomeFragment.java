@@ -1,5 +1,7 @@
 package com.example.hrms_msil;
 
+import static android.widget.LinearLayout.HORIZONTAL;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -70,6 +72,7 @@ public class HomeFragment extends Fragment {
 
                     homeAdapter = new HomeAdapter(workAnn);
                     recyclerView1.setAdapter(homeAdapter);
+
                     recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL,false));
 
                     holidayAdapter = new HolidayAdapter(holidays);
@@ -79,6 +82,17 @@ public class HomeFragment extends Fragment {
                     announceAdapter = new AnnounceAdapter(announcements);
                     recyclerView3.setAdapter(announceAdapter);
                     recyclerView3.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
+
+                    recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL,true));
+
+                    holidayAdapter = new HolidayAdapter(holidays);
+                    recyclerView2.setAdapter(holidayAdapter);
+                    recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,true));
+
+                    announceAdapter = new AnnounceAdapter(announcements);
+                    recyclerView3.setAdapter(announceAdapter);
+                    recyclerView3.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,true));
+
 
                 } else {
                     Toast.makeText(requireContext(), response.message(), Toast.LENGTH_SHORT).show();

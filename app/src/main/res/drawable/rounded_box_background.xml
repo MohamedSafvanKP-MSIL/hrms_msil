@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#B0F5F4FA" /> <!-- Replace with your desired background color -->
+
+    <corners android:radius="0dp" /> <!-- Adjust the radius to control the roundness of the box -->
+</shape>

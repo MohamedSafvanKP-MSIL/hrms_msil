@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
     android:background="@color/purple_200"
@@ -33,13 +34,26 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
+    android:layout_margin="8dp"
+    android:background="@color/purple_200">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:background="#91CCE6">
+
+
             <TextView
                 android:id="@+id/name11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name: "
                 android:textStyle="bold"
+
                 android:textColor="@color/black"
+
                 android:textSize="20dp"/>
 
             <TextView
@@ -47,46 +61,64 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name: "
+
                 android:textColor="@color/black"
                 android:layout_marginStart="50dp"
                 android:fontFamily="@font/brawler"
                 android:textSize="20sp"
                 android:layout_below="@id/name11"/>
+
+                android:textSize="20dp"/>
+
             <TextView
                 android:id="@+id/empid1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employee ID: "
+
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_below="@id/name"/>
+
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
 
             <TextView
                 android:id="@+id/empid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employee ID: "
+
                 android:textColor="@color/black"
                 android:layout_marginStart="50dp"
                 android:fontFamily="@font/brawler"
                 android:textSize="20sp"
                 android:layout_below="@+id/empid1"/>
+
+                android:textSize="20dp"/>
+
             <TextView
                 android:id="@+id/years1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="Years: "
+
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:layout_below="@+id/empid"/>
+
+                android:textSize="20dp"/>
+
 
             <TextView
                 android:id="@+id/years"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Years: "
+
                 android:layout_marginStart="50dp"
                 android:fontFamily="@font/brawler"
                 android:textSize="20sp"
@@ -99,4 +131,12 @@
 
 
 
+
+
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
 

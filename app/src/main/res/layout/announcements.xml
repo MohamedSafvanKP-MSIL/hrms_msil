@@ -2,12 +2,17 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardCornerRadius="15dp">
 
+    android:layout_margin="5dp">
+
+
     <RelativeLayout
         android:layout_width="match_parent"
+
         android:layout_height="250dp"
         android:orientation="vertical"
         android:padding="8dp"
@@ -32,20 +37,31 @@
             android:textColor="@color/black"
             android:layout_marginStart="320dp" />
 
+
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="#4CCADA">
+
         <TextView
             android:id="@+id/date01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date: "
+
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+            android:textStyle="bold"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/date1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date: "
+
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginStart="50dp"
@@ -53,67 +69,96 @@
 
             android:layout_below="@+id/date01"/>
 
+
+            android:textSize="20sp"/>
+
         <TextView
             android:id="@+id/title01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_below="@+id/date1"
             android:text="Title: "
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
+            android:textStyle="bold"
+            android:text="Title: "
+            android:textSize="20sp"/>
+
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title: "
+
             android:fontFamily="@font/brawler"
             android:textColor="@color/black"
             android:layout_marginStart="50dp"
 
             android:textSize="20sp"
             android:layout_below="@+id/title01"/>
+
+            android:textSize="20sp"/>
+
         <TextView
             android:id="@+id/message01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="Message: "
+
             android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_below="@+id/title"/>
+
+            android:textSize="20sp"/>
+
         <TextView
             android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Message: "
+
             android:fontFamily="@font/brawler"
             android:layout_marginStart="50dp"
 
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_below="@+id/message01"/>
+
+            android:textSize="20sp"/>
+
         <TextView
             android:id="@+id/priority01"
             android:layout_width="wrap_content"
             android:textStyle="bold"
             android:layout_height="wrap_content"
             android:text="Priority: "
+
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_below="@+id/message"/>
+
+            android:textSize="20sp"/>
+
         <TextView
             android:id="@+id/priority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Priority: "
+
             android:fontFamily="@font/brawler"
             android:layout_marginStart="50dp"
 
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_below="@+id/priority01"/>
+
+            android:textSize="20sp"/>
+
 
     </RelativeLayout>
 
