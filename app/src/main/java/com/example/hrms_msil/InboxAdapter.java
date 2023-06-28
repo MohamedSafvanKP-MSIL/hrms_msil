@@ -30,9 +30,13 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
 
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_data, parent, false);
+
+
         // Inflate your item layout and create a ViewHolder
 
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_data_updated, parent, false);
+
         return new ViewHolder(itemView);
     }
 

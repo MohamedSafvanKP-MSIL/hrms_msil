@@ -29,8 +29,11 @@ public class InboxFragment extends Fragment {
     private boolean isLiked = false;
     private ImageView noInternetImageView;
     private RecyclerView recyclerView;
+
+
     private ProgressBar progressBar;
     private InboxApi api;
+
     private InboxAdapter inboxAdapter;
 
 
@@ -41,7 +44,6 @@ public class InboxFragment extends Fragment {
         noInternetImageView = view.findViewById(R.id.no_internet_imageview);
         progressBar = view.findViewById(R.id.progress_bar);
         recyclerView = view.findViewById(R.id.recyclerview);
-
 
         return view;
     }
@@ -56,19 +58,28 @@ public class InboxFragment extends Fragment {
     }
 
     private void handle() {
+
+        InboxApi api = InboxClientInstance.getRetrofitInstance().create(InboxApi.class);
+
         progressBar.setVisibility(View.VISIBLE);
         api = InboxClientInstance.getRetrofitInstance().create(InboxApi.class);
+
 
         InboxPojo inboxData = new InboxPojo();
 
         Call<InboxPojo> call = api.createPost(inboxData);
         call.enqueue(new Callback<InboxPojo>() {
             @Override
+
+            public void onResponse(@NonNull Call<InboxPojo> call, @NonNull Response<InboxPojo> response) {
+
             public void onResponse(Call<InboxPojo> call, Response<InboxPojo> response) {
                 progressBar.setVisibility(View.GONE);
 
                 if (response.isSuccessful()) {
+                    assert response.body() != null;
                     ArrayList<InboxPojo.data> inboxData1 = response.body().getData();
+
 
 
                     inboxAdapter = new InboxAdapter(inboxData1);
@@ -85,13 +96,16 @@ public class InboxFragment extends Fragment {
             }
 
             @Override
+
+            public void onFailure(@NonNull Call<InboxPojo> call, @NonNull Throwable t) {
+                Toast.makeText(requireContext(), "Request failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
+
             public void onFailure(Call<InboxPojo> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(requireContext(), "Request failed" + t.getMessage(), Toast.LENGTH_SHORT).show();
                 noInternetImageView.setVisibility(View.VISIBLE);
+
             }
         });
     }
-
-
 }

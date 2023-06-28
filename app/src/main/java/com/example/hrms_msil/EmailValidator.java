@@ -1,7 +1,5 @@
 package com.example.hrms_msil;
 
-import android.util.Patterns;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,11 +10,10 @@ static boolean isValidEmail(String email)
     return email.contains("@marketsimplified.com");
 }
 static boolean isValidmPin(String mPin){
-        Pattern p = Pattern.compile("^[0-9]{6}$");//. represents single character
+        Pattern p = Pattern.compile("^[0-9]{6}$");
         Matcher m = p.matcher(mPin);
         boolean b = m.matches();
         return b;
-
     }
 }
 
