@@ -6,7 +6,7 @@
     android:layout_height="200dp"
     android:layout_gravity="center"
     android:background="@drawable/hrm1"
-    tools:context=".SplashActivity"
+    tools:context=".Login_signup.SplashActivity"
     >
 
 </RelativeLayout>
