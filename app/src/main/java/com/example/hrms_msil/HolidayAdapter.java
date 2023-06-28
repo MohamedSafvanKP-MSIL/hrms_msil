@@ -20,7 +20,6 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayAdapter.ViewHold
         this.holiday = holiday;
     }
 
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,7 +41,7 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name,empId,year,date,occasion,date1,title,message,priority;
+        TextView date,occasion;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
