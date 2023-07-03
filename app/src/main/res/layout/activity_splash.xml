@@ -13,7 +13,7 @@
         android:layout_height="200dp"
 
         android:orientation="vertical"
-        android:background="@drawable/hrm"
+        android:background="@drawable/hrm1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
        ></LinearLayout>

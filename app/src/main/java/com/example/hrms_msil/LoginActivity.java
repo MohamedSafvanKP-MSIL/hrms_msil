@@ -65,22 +65,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String employeeId=employeeIdEditText.getText().toString();
-                if(employeeId.isEmpty()){
+                if(employeeId.isEmpty()) {
                     employeeIdEditText.setError("Employee ID cant be empty");
                     return;
-                } else if (mPin.isEmpty() && mPin.length()!=6) {
-                    mpinEditText.setError("MPIN must be a 6-digit number");
-                    return;
+
                 }
 
                 UserDatabase userDatabase=UserDatabase.getDB(getApplicationContext());
                 List<User> loggingList = userDatabase.userDao().getAllUser();
                 List<User> filterdList = loggingList.stream().filter(user -> user.getUid()==
                         Integer.parseInt(String.valueOf(employeeIdEditText.getText()))).collect(Collectors.toList());
-//                Log.d("msg", String.valueOf(filterdList));
 
-//                Log.d("mpin", filterdList.get(0).mPin);
-                    
                   if(filterdList.get(0).mPin.equals(String.valueOf(mpinEditText.getText()))){
                     Intent intent2=new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent2);
