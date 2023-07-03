@@ -19,6 +19,8 @@ import com.example.hrms_msil.R;
 import com.example.hrms_msil.User;
 import com.example.hrms_msil.UserDatabase;
 
+import java.util.List;
+
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText emailEditText;
@@ -33,7 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-            emailEditText = findViewById(R.id.email);
+        emailEditText = findViewById(R.id.email);
 
         mpinEditText = findViewById(R.id.mpin);
         confirmMpinEditText = findViewById(R.id.confirmmpin);

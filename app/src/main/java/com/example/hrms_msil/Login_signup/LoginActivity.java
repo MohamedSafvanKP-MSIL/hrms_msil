@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         signupTextView = findViewById(R.id.signupTextView);
 
-        String mPin=mpinEditText.getText().toString();
+//        String mPin=mpinEditText.getText().toString();
 
 
         mpinEditText.addTextChangedListener(new TextWatcher() {
@@ -55,7 +55,8 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-              if(mPin.length()!=6){
+                String Mpin=charSequence.toString();
+              if(!Mpin.isEmpty() && Mpin.length() != 6){
                   mpinEditText.setError("Mpin must be a six digit number");
 
               }
@@ -72,21 +73,20 @@ public class LoginActivity extends AppCompatActivity {
                 String employeeId=employeeIdEditText.getText().toString();
                 if(employeeId.isEmpty()) {
                     employeeIdEditText.setError("Employee ID cant be empty");
-                    return;
 
-                }
+                }else {
 
-                UserDatabase userDatabase=UserDatabase.getDB(getApplicationContext());
-                List<User> loggingList = userDatabase.userDao().getAllUser();
-                List<User> filterdList = loggingList.stream().filter(user -> user.getUid()==
-                        Integer.parseInt(String.valueOf(employeeIdEditText.getText()))).collect(Collectors.toList());
+                    UserDatabase userDatabase = UserDatabase.getDB(getApplicationContext());
+                    List<User> loggingList = userDatabase.userDao().getAllUser();
+                    List<User> filterdList = loggingList.stream().filter(user -> user.getUid() ==
+                            Integer.parseInt(String.valueOf(employeeIdEditText.getText()))).collect(Collectors.toList());
 
-                  if(filterdList.get(0).mPin.equals(String.valueOf(mpinEditText.getText()))){
-                    Intent intent2=new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent2);
-                }
-                else {
-                    Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    if (filterdList.get(0).mPin.equals(String.valueOf(mpinEditText.getText()))) {
+                        Intent intent2 = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent2);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }
