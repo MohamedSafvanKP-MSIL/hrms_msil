@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/blue_bg"
     tools:context=".SignUpActivity">
     <ImageView
         android:id="@+id/image_view1"
@@ -21,7 +20,6 @@
         android:layout_below="@id/image_view1"
         android:layout_marginTop="8dp"
         android:hint="Email Address: "
-        android:textColorHint="@color/white"
         android:padding="12dp"
         android:imeOptions="actionNext"
         />
@@ -33,7 +31,6 @@
         android:layout_below="@id/email"
         android:layout_marginTop="8dp"
         android:hint="MPIN:"
-        android:textColorHint="@color/white"
         android:imeOptions="actionNext"
         android:inputType="number"
         android:maxLength="6"
@@ -46,7 +43,6 @@
         android:layout_marginTop="8dp"
         android:inputType="number"
         android:hint=" CONFIRM MPIN:"
-        android:textColorHint="@color/white"
         android:padding="12dp"
         android:imeOptions="actionNext"
         />
@@ -61,8 +57,7 @@
         android:layout_below="@id/confirmmpin"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/blue"
-        android:text="Sign Up"
-        />
+        android:text="Sign Up" />
 
 
 
