@@ -15,6 +15,8 @@ import com.example.hrms_msil.R;
 import com.example.hrms_msil.User;
 import com.example.hrms_msil.UserDatabase;
 
+import java.util.List;
+
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText emailEditText;

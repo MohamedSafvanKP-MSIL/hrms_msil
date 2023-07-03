@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <ProgressBar
@@ -13,6 +13,14 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/no_internet_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/no_internet"
+        android:visibility="gone" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/work"
@@ -20,12 +28,12 @@
         app:cardCornerRadius="15dp"
         android:layout_marginStart="150dp"
         android:layout_height="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text=" WorkAnniversary"
-            android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text=" WorkAnniversary"
+        android:textColor="@color/black"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -35,13 +43,13 @@
         app:cardCornerRadius="15dp"
         android:layout_below="@+id/recyclerview1"
         android:layout_height="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Holidays"
-            android:layout_marginStart="30dp"
-            android:textColor="@color/black" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Holidays"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black" />
     </androidx.cardview.widget.CardView>
 
 
@@ -53,14 +61,15 @@
         android:id="@+id/announcement"
         android:layout_marginStart="150dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Announcements"
-            android:layout_marginStart="9dp"
-            android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Announcements"
+        android:layout_marginStart="9dp"
+        android:textColor="@color/black"/>
     </androidx.cardview.widget.CardView>
+
 
 
 
@@ -71,19 +80,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/work"
-
         android:scrollbars="vertical"
 
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
     +<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerview2"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+        android:id="@+id/recyclerview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-    android:layout_below="@+id/holiday"/>
+    android:layout_below="@+id/recyclerview1"/>
+
+        android:layout_below="@+id/holiday"/>
 
 
 
@@ -92,8 +101,12 @@
         android:id="@+id/recyclerview3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_below="@id/announcement"/>
+        android:layout_below="@id/recyclerview2"/>
 
 
 </RelativeLayout>
+
+
+
+
+
