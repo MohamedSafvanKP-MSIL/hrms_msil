@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="235dp"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_box_background">
+
+        <TextView
+            android:id="@+id/From"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/baloo_tammudu"
+            android:text="KaviyaVarshini Krishnamurthy"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="191dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="182dp"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@font/baloo_tammudu"
+            android:text="created an announcement,"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="389dp"
+            android:layout_height="28dp"
+            android:layout_below="@+id/From"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_title"
+            android:fontFamily="@font/cherry_cream_soda"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/Hello"
+            android:layout_width="97dp"
+            android:layout_height="18dp"
+            android:layout_below="@+id/title"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/cherry_cream_soda"
+            android:text="Hello Team,"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_below="@+id/Hello"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round_title"
+            android:fontFamily="@font/cherry_cream_soda"
+            android:text="TextView"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/message"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="6dp"
+            android:text="Add Link"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/url"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="3dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/priority"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/url"
+            android:layout_alignStart="@+id/url"
+            android:layout_marginStart="295dp"
+            android:layout_marginTop="-101dp"
+            android:gravity="center"
+            android:text="TextView" />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

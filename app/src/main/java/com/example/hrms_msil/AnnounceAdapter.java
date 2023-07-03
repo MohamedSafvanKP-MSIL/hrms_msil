@@ -44,7 +44,6 @@ public class AnnounceAdapter extends RecyclerView.Adapter<AnnounceAdapter.ViewHo
         return announcements.size();
     }
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView date1,title,message,priority;
 
