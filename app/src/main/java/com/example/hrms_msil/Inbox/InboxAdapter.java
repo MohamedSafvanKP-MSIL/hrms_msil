@@ -76,8 +76,8 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
         return inboxDataList .size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title,message,date,priority,url,likeCount;
-        ImageView likeButton;
+        TextView title,message,date,priority,url;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,8 +87,7 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
             date=itemView.findViewById(R.id.date);
             priority=itemView.findViewById(R.id.priority);
             url=itemView.findViewById(R.id.url);
-//            likeCount = itemView.findViewById(R.id.like_count);
-//            likeButton = itemView.findViewById(R.id.like_icon);
+
         }
     }
 }

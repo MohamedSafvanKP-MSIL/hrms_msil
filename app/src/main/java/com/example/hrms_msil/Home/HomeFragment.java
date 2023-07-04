@@ -1,5 +1,6 @@
 package com.example.hrms_msil.Home;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -26,14 +28,17 @@ public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView1,recyclerView2,recyclerView3;
     private ProgressBar progressBar;
+    private ImageView noInternetImageView;
     HomeAdapter homeAdapter;
     HolidayAdapter holidayAdapter;
     AnnounceAdapter announceAdapter;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        noInternetImageView = view.findViewById(R.id.no_internet_imageview);
         progressBar = view.findViewById(R.id.progress_bar);
         recyclerView1 = view.findViewById(R.id.recyclerview1);
         recyclerView2 = view.findViewById(R.id.recyclerview2);
@@ -81,7 +86,7 @@ public class HomeFragment extends Fragment {
 
 
                 } else {
-                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_SHORT).show();
+                    noInternetImageView.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -89,6 +94,7 @@ public class HomeFragment extends Fragment {
             public void onFailure(@NonNull Call<HomeResponse> call, Throwable t) {
                 Toast.makeText(requireContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
+                noInternetImageView.setVisibility(View.VISIBLE);
             }
         });
     }

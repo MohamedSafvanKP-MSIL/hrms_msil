@@ -31,8 +31,7 @@ import retrofit2.Response;
 
 public class InboxFragment extends Fragment {
 
-    private int currentLikes = 0;
-    private boolean isLiked = false;
+
     private ImageView noInternetImageView;
     private RecyclerView recyclerView;
 
