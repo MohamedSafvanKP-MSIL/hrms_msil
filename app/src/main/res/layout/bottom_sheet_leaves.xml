@@ -64,8 +64,8 @@
         android:layout_marginEnd="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="@drawable/btn_outline"
-        android:textColor="#C1D5507C"
+        android:background="@drawable/btn_fullcolour"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_marginBottom="15dp"
         android:text="Apply" />
