@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardCornerRadius="15dp">
@@ -11,7 +10,6 @@
         android:layout_width="120dp"
         android:layout_height="20dp"
         app:cardCornerRadius="15dp"
-        android:layout_below="@+id/recyclerview2"
         android:id="@+id/announcement"
         android:layout_marginStart="150dp">
 
@@ -24,17 +22,12 @@
             android:textColor="@color/black"/>
     </androidx.cardview.widget.CardView>
 
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
-
         android:layout_height="250dp"
         android:orientation="vertical"
         android:padding="8dp"
-        android:background="@drawable/img_6">
-
+        android:background="#54A4E6">
 
         <ImageView
             android:id="@+id/swipe1"
@@ -51,65 +44,49 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:text="Swipe"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginStart="320dp" />
-
-
 
         <TextView
             android:id="@+id/date01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date: "
-
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
-
 
         <TextView
             android:id="@+id/date1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date: "
-
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_marginStart="50dp"
             android:fontFamily="@font/brawler"
-
             android:layout_below="@+id/date01"/>
-
-
 
         <TextView
             android:id="@+id/title01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_below="@+id/date1"
             android:text="Title: "
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-
-
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title: "
-
             android:fontFamily="@font/brawler"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginStart="50dp"
-
             android:textSize="20sp"
             android:layout_below="@+id/title01"/>
-
-
 
         <TextView
             android:id="@+id/message01"
@@ -117,9 +94,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="Message: "
-
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_below="@+id/title"/>
 
         <TextView
@@ -127,14 +103,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Message: "
-
             android:fontFamily="@font/brawler"
             android:layout_marginStart="50dp"
-
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_below="@+id/message01"/>
-
 
         <TextView
             android:id="@+id/priority01"
@@ -142,28 +115,25 @@
             android:textStyle="bold"
             android:layout_height="wrap_content"
             android:text="Priority: "
-
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_below="@+id/message"/>
-
-
 
         <TextView
             android:id="@+id/priority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Priority: "
-
             android:fontFamily="@font/brawler"
             android:layout_marginStart="50dp"
-
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_below="@+id/priority01"/>
-
-
 
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
+
+
+
+

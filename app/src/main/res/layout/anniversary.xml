@@ -27,7 +27,7 @@
         android:layout_height="180dp"
         android:orientation="vertical"
         android:padding="5dp"
-        android:background="@drawable/round3_url">
+        android:background="#54A4E6">
         <ImageView
             android:id="@+id/swipe"
             android:layout_width="20dp"
@@ -44,7 +44,7 @@
             android:layout_marginStart="320dp"
             android:layout_marginTop="3dp"
             android:text="Swipe"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -55,9 +55,7 @@
             android:layout_height="wrap_content"
             android:text="Name: "
             android:textStyle="bold"
-
-            android:textColor="@color/black"
-
+            android:textColor="@color/white"
             android:textSize="20dp"/>
 
         <TextView
@@ -66,7 +64,7 @@
             android:layout_height="wrap_content"
             android:text="Name: "
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginStart="50dp"
             android:fontFamily="@font/brawler"
             android:textSize="20sp"
@@ -80,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="Employee ID: "
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_below="@id/name"/>
@@ -93,7 +91,7 @@
             android:layout_height="wrap_content"
             android:text="Employee ID: "
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginStart="50dp"
             android:fontFamily="@font/brawler"
             android:textSize="20sp"
@@ -108,7 +106,7 @@
             android:textStyle="bold"
             android:text="Years: "
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_below="@+id/empid"/>
 
@@ -124,7 +122,7 @@
             android:layout_marginStart="50dp"
             android:fontFamily="@font/brawler"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_below="@+id/years1"/>
 
     </RelativeLayout>
