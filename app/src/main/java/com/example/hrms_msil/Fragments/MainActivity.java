@@ -1,8 +1,13 @@
 package com.example.hrms_msil.Fragments;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,17 +21,20 @@ import com.example.hrms_msil.Leaves.LeavesFragment;
 import com.example.hrms_msil.Profile.ProfileFragment;
 import com.example.hrms_msil.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
+    RelativeLayout snackLayout;
 
     private HomeFragment homeFragment;
     private ProfileFragment profileFragment;
     private LeavesFragment leavesFragment;
     private InboxFragment inboxFragment;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         frameLayout = findViewById(R.id.frameLayout);
+        snackLayout=findViewById(R.id.snackBar_layout);
 
         homeFragment = new HomeFragment();
         profileFragment = new ProfileFragment();
@@ -61,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        if(checkConnection()){
+            Snackbar snackbar=Snackbar.make(snackLayout,"network connected",Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+        else {
+            Snackbar snackbar=Snackbar.make(snackLayout,"No Network",Snackbar.LENGTH_LONG);
+            snackbar.show();        }
 
     }
 
@@ -70,4 +86,15 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
+    private boolean checkConnection(){
+        ConnectivityManager connectivityManager=(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();
+        if(networkInfo==null) {
+            return false;
+        }
+            else{
+            return  networkInfo.isConnected();
+            }
+        }
+
 }
