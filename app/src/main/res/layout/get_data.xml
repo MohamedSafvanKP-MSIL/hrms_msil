@@ -8,12 +8,26 @@
     android:background="@color/purple_200"
     app:cardCornerRadius="15dp">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/work"
+        android:layout_width="120dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginStart="150dp"
+        android:layout_height="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text=" WorkAnniversary"
+            android:textColor="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="vertical"
         android:padding="5dp"
-        android:background="@drawable/img_10">
+        android:background="@drawable/round3_url">
         <ImageView
             android:id="@+id/swipe"
             android:layout_width="20dp"
@@ -116,3 +130,4 @@
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
+

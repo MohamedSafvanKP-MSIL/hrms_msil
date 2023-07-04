@@ -6,6 +6,22 @@
 
     android:layout_margin="5dp"
     app:cardCornerRadius="15dp">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/holiday"
+        android:layout_width="120dp"
+        android:layout_marginStart="150dp"
+        app:cardCornerRadius="15dp"
+        android:layout_below="@+id/recyclerview1"
+        android:layout_height="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Holidays"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
 
     <RelativeLayout
         android:layout_width="match_parent"

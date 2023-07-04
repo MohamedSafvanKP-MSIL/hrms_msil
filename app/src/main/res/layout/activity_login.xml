@@ -7,7 +7,8 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".Login_signup.LoginActivity">
+    android:background="@drawable/blue_bg"
+    tools:context=".LoginActivity">
 
 
     <ImageView
@@ -25,6 +26,7 @@
         android:layout_marginTop="8dp"
         android:inputType="number"
         android:hint="Employee ID: "
+        android:textColorHint="@color/white"
         android:padding="12dp"
         android:imeOptions="actionNext"
        />
@@ -37,6 +39,7 @@
         android:inputType="number"
         android:hint="MPIN"
         android:padding="12dp"
+        android:textColorHint="@color/white"
         android:imeOptions="actionNext"
         />
 
@@ -48,16 +51,28 @@
         android:layout_below="@id/mpin"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/blue"
-        android:text="Login" />
+        android:text="Login"
+        />
 
     <TextView
-        android:id="@+id/signupTextView"
+        android:id="@+id/Not_registered_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Not registered yet? Sign up"
+        android:text="Not registered yet? "
         android:textSize="16sp"
+        android:textColor="@color/white"
         android:layout_below="@id/loginButton"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/signupTextView"
+    android:layout_toEndOf="@id/Not_registered_textview"
+    android:text="SIGN UP"
+    android:textColor="@color/blue"
+    android:layout_below="@id/loginButton"
+    android:layout_marginTop="16dp"
+    android:textSize="16sp"/>
 
 </RelativeLayout>

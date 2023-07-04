@@ -7,14 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hrms_msil.Inbox.InboxAdapter;
+import com.example.hrms_msil.Inbox.InboxApi;
+import com.example.hrms_msil.Inbox.InboxClientInstance;
+import com.example.hrms_msil.Inbox.InboxPojo;
 import com.example.hrms_msil.R;
 
 import java.util.ArrayList;
@@ -25,8 +31,7 @@ import retrofit2.Response;
 
 public class InboxFragment extends Fragment {
 
-    private int currentLikes = 0;
-    private boolean isLiked = false;
+
     private ImageView noInternetImageView;
     private RecyclerView recyclerView;
 
@@ -73,12 +78,12 @@ public class InboxFragment extends Fragment {
 
             public void onResponse(@NonNull Call<InboxPojo> call, @NonNull Response<InboxPojo> response) {
 
-
                 progressBar.setVisibility(View.GONE);
 
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     ArrayList<InboxPojo.data> inboxData1 = response.body().getData();
+
 
 
                     inboxAdapter = new InboxAdapter(inboxData1);
@@ -91,6 +96,8 @@ public class InboxFragment extends Fragment {
                 } else {
 
                     noInternetImageView.setVisibility(View.VISIBLE);
+                  
+                progressBar.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -98,11 +105,16 @@ public class InboxFragment extends Fragment {
 
             public void onFailure(@NonNull Call<InboxPojo> call, @NonNull Throwable t) {
 
+
+               
+
+                Toast.makeText(requireContext(), "Request failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(requireContext(), "Request failed" + t.getMessage(), Toast.LENGTH_SHORT).show();
+              
+
                 noInternetImageView.setVisibility(View.VISIBLE);
 
             }
         });
+        }
     }
-}

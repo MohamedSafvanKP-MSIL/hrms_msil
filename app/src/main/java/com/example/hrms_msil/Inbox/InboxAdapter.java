@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.hrms_msil.Inbox.InboxPojo;
 import com.example.hrms_msil.R;
 
 import java.util.ArrayList;
@@ -30,6 +33,7 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
 
+//        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_data, parent, false);
 
 
         // Inflate your item layout and create a ViewHolder
@@ -72,8 +76,8 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
         return inboxDataList .size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title,message,date,priority,url,likeCount;
-        ImageView likeButton;
+        TextView title,message,date,priority,url;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -83,8 +87,7 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
             date=itemView.findViewById(R.id.date);
             priority=itemView.findViewById(R.id.priority);
             url=itemView.findViewById(R.id.url);
-//            likeCount = itemView.findViewById(R.id.like_count);
-//            likeButton = itemView.findViewById(R.id.like_icon);
+
         }
     }
 }
