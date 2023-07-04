@@ -86,14 +86,17 @@ public class HomeFragment extends Fragment {
 
 
                 } else {
-                    noInternetImageView.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
+                   noInternetImageView.setVisibility(View.VISIBLE);
+
+
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<HomeResponse> call, Throwable t) {
-                Toast.makeText(requireContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
+                Toast.makeText(requireContext(),"Request failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.VISIBLE);
                 noInternetImageView.setVisibility(View.VISIBLE);
             }
         });

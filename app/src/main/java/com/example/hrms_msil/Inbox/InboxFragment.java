@@ -96,15 +96,22 @@ public class InboxFragment extends Fragment {
                 } else {
 
                     noInternetImageView.setVisibility(View.VISIBLE);
+                  
+                progressBar.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
 
             public void onFailure(@NonNull Call<InboxPojo> call, @NonNull Throwable t) {
+
+
+               
+
                 Toast.makeText(requireContext(), "Request failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(requireContext(), "Request failed" + t.getMessage(), Toast.LENGTH_SHORT).show();
+              
+
                 noInternetImageView.setVisibility(View.VISIBLE);
 
             }

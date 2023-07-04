@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <ProgressBar
@@ -20,6 +20,7 @@
         android:layout_centerInParent="true"
         android:src="@drawable/img_4"
         android:visibility="gone" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/work"
@@ -73,12 +74,11 @@
 
 
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_below="@+id/work"
 
         android:scrollbars="vertical"
 
@@ -90,6 +90,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+    android:layout_below="@+id/recyclerview1"/>
+
         android:layout_below="@+id/holiday"/>
 
 
@@ -99,8 +101,7 @@
         android:id="@+id/recyclerview3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_below="@id/announcement"/>
+        android:layout_below="@id/recyclerview2"/>
 
 
 </RelativeLayout>

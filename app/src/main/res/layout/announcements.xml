@@ -7,7 +7,24 @@
     android:layout_margin="5dp"
     app:cardCornerRadius="15dp">
 
-    android:layout_margin="5dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="20dp"
+        app:cardCornerRadius="15dp"
+        android:layout_below="@+id/recyclerview2"
+        android:id="@+id/announcement"
+        android:layout_marginStart="150dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Announcements"
+            android:layout_marginStart="9dp"
+            android:textColor="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
+
 
 
     <RelativeLayout
@@ -38,10 +55,6 @@
             android:layout_marginStart="320dp" />
 
 
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp"
-        android:background="#4CCADA">
 
         <TextView
             android:id="@+id/date01"
@@ -53,8 +66,6 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-            android:textStyle="bold"
-            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/date1"
@@ -70,7 +81,6 @@
             android:layout_below="@+id/date01"/>
 
 
-            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/title01"
@@ -83,9 +93,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-            android:textStyle="bold"
-            android:text="Title: "
-            android:textSize="20sp"/>
+
 
 
         <TextView
@@ -101,7 +109,7 @@
             android:textSize="20sp"
             android:layout_below="@+id/title01"/>
 
-            android:textSize="20sp"/>
+
 
         <TextView
             android:id="@+id/message01"
@@ -113,8 +121,6 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_below="@+id/title"/>
-
-            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/message"
@@ -129,7 +135,6 @@
             android:textSize="20sp"
             android:layout_below="@+id/message01"/>
 
-            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/priority01"
@@ -142,7 +147,7 @@
             android:textSize="20sp"
             android:layout_below="@+id/message"/>
 
-            android:textSize="20sp"/>
+
 
         <TextView
             android:id="@+id/priority"
@@ -157,7 +162,6 @@
             android:textSize="20sp"
             android:layout_below="@+id/priority01"/>
 
-            android:textSize="20sp"/>
 
 
     </RelativeLayout>
