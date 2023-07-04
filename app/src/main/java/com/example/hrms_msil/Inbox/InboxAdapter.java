@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.hrms_msil.Inbox.InboxPojo;
 import com.example.hrms_msil.R;
 
 import java.util.ArrayList;
@@ -30,6 +33,7 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
 
+//        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_data, parent, false);
 
 
         // Inflate your item layout and create a ViewHolder
