@@ -104,12 +104,12 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="24dp"
         android:layout_marginTop="420dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/round3_url"
         android:gravity="center_vertical"
         android:paddingStart="10dp"
         android:text="Text"
         android:textColor="@color/black"
-        android:layout_marginEnd="50dp"
         android:textSize="16sp" />
 
 

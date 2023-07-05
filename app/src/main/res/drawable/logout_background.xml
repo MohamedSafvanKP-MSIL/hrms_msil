@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@android:color/transparent" />
-    <stroke
-        android:width="4dp"
-        android:color="@color/purple_200" /> <!-- Purple color with alpha (80% opacity) -->
-    <corners android:radius="8dp" /> <!-- Adjust the radius value as per your preference -->
-</shape>

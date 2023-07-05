@@ -145,15 +145,14 @@
             android:text="Sick Leaves Usages chart"
             android:textColor="#9E385A"
             android:textStyle="bold" />
+
+
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChartsl"
             android:layout_width="match_parent"
             android:layout_height="300dp" />
 
-
-
-
-    <TextView
+        <TextView
         android:id="@+id/tvCasualLeave"
         android:layout_width="match_parent"
         android:layout_height="30dp"
