@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:background="@color/purple_200"
+    app:cardCornerRadius="15dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:background="@drawable/img_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="* WorkAnniversary *"
+            android:layout_marginStart="120dp"
+            android:textSize="20sp"
+            android:textColor="#D3BE08"/>
+
+        <ImageView
+            android:id="@+id/swipe"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="350dp"
+            android:src="@drawable/swipe2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/swipe"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="3dp"
+            android:text="Swipe"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/name11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+
+            android:textColor="@color/white"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/brawler"
+            android:textSize="20sp"
+            android:layout_below="@id/name11"/>
+
+
+        <TextView
+            android:id="@+id/empid1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Employee ID: "
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_below="@id/name"/>
+
+
+
+        <TextView
+            android:id="@+id/empid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Employee ID: "
+
+            android:textColor="@color/white"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/brawler"
+            android:textSize="20sp"
+            android:layout_below="@+id/empid1"/>
+
+
+
+        <TextView
+            android:id="@+id/years1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Years: "
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_below="@+id/empid"/>
+
+
+
+
+        <TextView
+            android:id="@+id/years"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Years: "
+
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/brawler"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/years1"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

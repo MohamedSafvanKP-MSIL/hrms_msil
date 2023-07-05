@@ -2,14 +2,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/bottomsheet">
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
 
-    <TextView
+
+<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Leave Type"
         android:layout_marginTop="5dp"
-        android:textColor="#287bc7"
+        android:textColor="#9E385A"
         android:gravity="center_horizontal"
         android:textStyle="bold"
         android:textAppearance="@android:style/TextAppearance.Large" />
@@ -62,8 +64,9 @@
         android:layout_marginEnd="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="@drawable/btn_outline"
-        android:textColor="#287bc7"
+        android:background="@drawable/btn_fullcolour"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_marginBottom="15dp"
         android:text="Apply" />
 

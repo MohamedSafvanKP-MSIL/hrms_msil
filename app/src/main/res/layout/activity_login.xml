@@ -7,14 +7,14 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".LoginActivity">
+    tools:context=".Login_signup.LoginActivity">
 
 
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:src="@drawable/hrm"
+        android:src="@drawable/hrm1"
         android:layout_centerHorizontal="true"
         />
     <EditText
@@ -48,16 +48,27 @@
         android:layout_below="@id/mpin"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/blue"
-        android:text="Login" />
+        android:text="Login"
+        />
 
     <TextView
-        android:id="@+id/signupTextView"
+        android:id="@+id/Not_registered_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Not registered yet? Sign up"
+        android:text="Not registered yet? "
         android:textSize="16sp"
         android:layout_below="@id/loginButton"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/signupTextView"
+    android:layout_toEndOf="@id/Not_registered_textview"
+    android:text="SIGN UP"
+    android:textColor="@color/blue"
+    android:layout_below="@id/loginButton"
+    android:layout_marginTop="16dp"
+    android:textSize="16sp"/>
 
 </RelativeLayout>
