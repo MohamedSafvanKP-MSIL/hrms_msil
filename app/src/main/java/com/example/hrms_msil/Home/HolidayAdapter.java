@@ -22,13 +22,15 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayAdapter.ViewHold
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.holidays, parent, false);
         return new ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position)
+    {
         HolidaysItem holidaysItem = holiday.get(position);
         holder.date.setText(holidaysItem.getDate());
         holder.occasion.setText(holidaysItem.getOccasion());

@@ -8,26 +8,23 @@
     android:background="@color/purple_200"
     app:cardCornerRadius="15dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/work"
-        android:layout_width="120dp"
-        app:cardCornerRadius="15dp"
-        android:layout_marginStart="150dp"
-        android:layout_height="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text=" WorkAnniversary"
-            android:textColor="@color/black"/>
-    </androidx.cardview.widget.CardView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="vertical"
         android:padding="5dp"
-        android:background="@drawable/round3_url">
+        android:background="@drawable/img_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="* WorkAnniversary *"
+            android:layout_marginStart="120dp"
+            android:textSize="20sp"
+            android:textColor="#F63F06"/>
+
         <ImageView
             android:id="@+id/swipe"
             android:layout_width="20dp"
@@ -44,7 +41,7 @@
             android:layout_marginStart="320dp"
             android:layout_marginTop="3dp"
             android:text="Swipe"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -55,9 +52,7 @@
             android:layout_height="wrap_content"
             android:text="Name: "
             android:textStyle="bold"
-
-            android:textColor="@color/black"
-
+            android:textColor="@color/white"
             android:textSize="20dp"/>
 
         <TextView
@@ -66,12 +61,11 @@
             android:layout_height="wrap_content"
             android:text="Name: "
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginStart="50dp"
             android:fontFamily="@font/brawler"
             android:textSize="20sp"
             android:layout_below="@id/name11"/>
-
 
 
         <TextView
@@ -79,8 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Employee ID: "
-
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_below="@id/name"/>
@@ -93,7 +86,7 @@
             android:layout_height="wrap_content"
             android:text="Employee ID: "
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginStart="50dp"
             android:fontFamily="@font/brawler"
             android:textSize="20sp"
@@ -108,7 +101,7 @@
             android:textStyle="bold"
             android:text="Years: "
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_below="@+id/empid"/>
 
@@ -124,7 +117,7 @@
             android:layout_marginStart="50dp"
             android:fontFamily="@font/brawler"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_below="@+id/years1"/>
 
     </RelativeLayout>
