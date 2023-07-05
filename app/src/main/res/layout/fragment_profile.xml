@@ -5,6 +5,16 @@
     android:layout_height="match_parent">
 
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@drawable/baseline_arrow_forward_24" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView1"
         android:layout_width="60dp"
@@ -36,7 +46,24 @@
         android:gravity="center_vertical"
         android:layout_marginEnd="50dp"
         android:paddingStart="10dp"
-        android:text="Text"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/contactTextView"
+        android:layout_width="343dp"
+        android:layout_height="41dp"
+        android:layout_below="@id/ageTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="194dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/round3_url"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -49,12 +76,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/round3_url"
         android:gravity="center_vertical"
         android:paddingStart="10dp"
-        android:layout_marginEnd="50dp"
-        android:text="Text"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -66,13 +92,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="271dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/round3_url"
         android:gravity="center_vertical"
         android:paddingStart="10dp"
-        android:layout_marginEnd="50dp"
-        android:text="Text"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -84,13 +109,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="343dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="390dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/round3_url"
         android:gravity="center_vertical"
         android:paddingStart="10dp"
-        android:text="Text"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -102,16 +126,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="454dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/round3_url"
         android:gravity="center_vertical"
         android:paddingStart="10dp"
-        android:text="Text"
         android:textColor="@color/black"
         android:textSize="16sp" />
-
 
     <TextView
         android:id="@+id/name"
@@ -126,6 +148,20 @@
         android:textSize="15dp"
         android:textStyle="bold" />
 
+
+    <TextView
+        android:id="@+id/Contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="172dp"
+        android:text="Contact No :"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/age"
         android:layout_width="wrap_content"
@@ -133,7 +169,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="181dp"
+        android:layout_marginTop="238dp"
         android:text="Age :"
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -146,7 +182,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="303dp"
         android:text="Qualification :"
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -160,7 +196,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="368dp"
         android:text="Work Experience :"
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -174,12 +210,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="402dp"
+        android:layout_marginTop="432dp"
         android:text="Soft Skills :"
         android:textColor="@color/black"
         android:textSize="15dp"
         android:textStyle="bold" />
-
 
     <ImageView
         android:id="@+id/imageView1"
@@ -190,13 +225,25 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/baseline_edit_24" />
+
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="16dp"
+        app:srcCompat="@drawable/baseline_edit_24" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="211dp"
+        android:layout_marginTop="270dp"
         android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/baseline_edit_24" />
 
@@ -206,9 +253,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="342dp"
         android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/baseline_edit_24" />
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
@@ -216,7 +264,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="416dp"
         android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/baseline_edit_24" />
 
@@ -226,26 +274,44 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="485dp"
         android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/baseline_edit_24" />
 
-
-
-
     <Button
         android:id="@+id/logout_button"
-        android:layout_width="189dp"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="36dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginBottom="55dp"
         android:background="@drawable/round3_url"
-        android:text="Log Out" />
+        android:text="Log Out"
+        android:textSize="11dp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginBottom="15dp"
+        android:text="For more details click here"
+        android:textColor="@color/blue"
+        android:textSize="18dp" />
 
+    <ImageView
+        android:id="@+id/contact"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="8dp"
+        app:srcCompat="@drawable/contact" />
 
 
 </RelativeLayout>

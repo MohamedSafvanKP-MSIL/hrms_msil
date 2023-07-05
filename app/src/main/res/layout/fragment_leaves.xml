@@ -24,12 +24,20 @@
         android:textSize="25dp" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Here is the detailed information about the \n availability and usage of your leaves"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
             android:id="@+id/tvSickLeave"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@+id/leaves"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/baseline_check_box_outline_blank_24"
             android:gravity="center_horizontal"
@@ -143,7 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center_horizontal"
-            android:text="Sick Leaves Usages chart"
+            android:text="Sick Leaves Usages Chart"
             android:textColor="#9E385A"
             android:textStyle="bold" />
 
@@ -273,7 +281,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:text="Casual Leaves Usages chart"
+            android:text="Casual Leaves Usages Chart"
             android:textColor="#9E385A"
             android:textStyle="bold" />
 
@@ -400,7 +408,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:text="Medical Leaves Usages chart"
+            android:text="Medical Leaves Usages Chart"
             android:textColor="#9E385A"
             android:textStyle="bold" />
 
@@ -408,7 +416,13 @@
             android:id="@+id/pieChartml"
             android:layout_width="match_parent"
             android:layout_height="300dp"/>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:text="Please click on the below button to \n open the application menu"
+            android:textColor="#9E385A" />
         <Button
             android:id="@+id/btnApplyLeave"
             android:layout_width="wrap_content"
@@ -416,12 +430,11 @@
             android:layout_below="@id/medicalLeaveContainer"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/btn_outline"
-            android:text="Apply For Leave"
+            android:text="Leave Application Menu"
             android:textColor="@color/black"
             android:textStyle="bold" />
-
     </LinearLayout>
 </ScrollView>

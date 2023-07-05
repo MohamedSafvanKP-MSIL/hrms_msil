@@ -31,7 +31,7 @@ import java.util.List;
 
 public class LeavesFragment extends Fragment {
     public static final int[] CUSTOM_COLORS = {
-             rgb("#B9E64343"),rgb("#64C668")
+            rgb("#C5ACFC"),rgb("#648EFF")
     };
     private static final String LEAVE_PREFS_NAME = "LeavePrefs";
     private static final String SICK_LEAVE = "Sick Leave";
