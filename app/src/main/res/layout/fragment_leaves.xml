@@ -141,12 +141,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_horizontal"
             android:text="Sick Leaves Usages chart"
             android:textColor="#9E385A"
             android:textStyle="bold" />
-
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChartsl"
@@ -272,11 +271,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:text="Casual Leaves Usages chart"
             android:textColor="#9E385A"
             android:textStyle="bold" />
+
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChartcl"
             android:layout_width="match_parent"
@@ -403,6 +403,7 @@
             android:text="Medical Leaves Usages chart"
             android:textColor="#9E385A"
             android:textStyle="bold" />
+
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChartml"
             android:layout_width="match_parent"
