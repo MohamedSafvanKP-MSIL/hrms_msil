@@ -4,5 +4,5 @@
     <stroke
         android:width="2dp"
         android:color="#9E385A" /> <!-- Purple color with alpha (80% opacity) -->
-    <corners android:radius="1dp" /> <!-- Adjust the radius value as per your preference -->
+    <corners android:radius="2dp" /> <!-- Adjust the radius value as per your preference -->
 </shape>
