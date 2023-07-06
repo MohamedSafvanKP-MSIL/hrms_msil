@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.hrms_msil.Fragments.ContactActivity;
 import com.example.hrms_msil.Login_signup.LoginActivity;
 import com.example.hrms_msil.R;
 import com.example.hrms_msil.User;
@@ -41,7 +42,7 @@ public class ProfileFragment extends Fragment {
     private TextView softSkillsTextView;
     private TextView contactTextView;
     private Button logoutButton;
-    private ImageView profile,edit1,edit2,edit3,edit4,edit5;
+    private ImageView profile,edit1,edit2,edit3,edit4,edit5,contact;
 
     private SharedPreferences sharedPreference;
 
@@ -62,6 +63,7 @@ public class ProfileFragment extends Fragment {
         softSkillsTextView = view.findViewById(R.id.softSkillsTextView);
         logoutButton = view.findViewById(R.id.logout_button);
         profile=view.findViewById(R.id.imageview);
+        contact=view.findViewById(R.id.contact);
 
         edit1=view.findViewById(R.id.imageView1);
         edit2=view.findViewById(R.id.imageView2);
@@ -97,6 +99,13 @@ public class ProfileFragment extends Fragment {
         String soft=sharedPreference.getString("Soft Skills","");
         softSkillsTextView.setText(""+soft);
 
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(requireContext(), ContactActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         edit1.setOnClickListener(new View.OnClickListener() {

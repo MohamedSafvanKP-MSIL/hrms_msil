@@ -108,7 +108,7 @@ public class InboxFragment extends Fragment {
 
                
 
-                Toast.makeText(requireContext(), "Request failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Request failed", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
               
 

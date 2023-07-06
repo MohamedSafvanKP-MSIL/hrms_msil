@@ -95,7 +95,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<HomeResponse> call, Throwable t) {
-                Toast.makeText(requireContext(),"Request failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(),"Request failed", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.VISIBLE);
                 noInternetImageView.setVisibility(View.VISIBLE);
             }
