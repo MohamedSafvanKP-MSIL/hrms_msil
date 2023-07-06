@@ -1,5 +1,6 @@
 package com.example.hrms_msil.Profile;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,8 +10,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +23,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.hrms_msil.Fragments.ContactActivity;
 import com.example.hrms_msil.Login_signup.LoginActivity;
 import com.example.hrms_msil.R;
+import com.example.hrms_msil.User;
+import com.example.hrms_msil.UserDatabase;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import java.util.List;
 
 
 public class ProfileFragment extends Fragment {
@@ -35,13 +38,16 @@ public class ProfileFragment extends Fragment {
     private TextView ageTextView;
     private TextView qualificationTextView;
     private TextView workExperienceTextView;
-    private TextView softSkillsTextView,contactTextView;
-
+    private TextView softSkillsTextView;
+    private TextView contactTextView;
     private Button logoutButton;
-    private ImageView profile,edit1,edit2,edit3,edit4,edit5,edit6,contact;
+    private ImageView profile,edit1,edit2,edit3,edit4,edit5;
 
     private SharedPreferences sharedPreference;
 
+
+
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,29 +55,36 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         nameTextView = view.findViewById(R.id.nameTextView);
+        contactTextView=view.findViewById(R.id.contactTextView);
         ageTextView = view.findViewById(R.id.ageTextView);
         qualificationTextView = view.findViewById(R.id.qualificationTextView);
         workExperienceTextView = view.findViewById(R.id.workExperienceTextView);
         softSkillsTextView = view.findViewById(R.id.softSkillsTextView);
-        contactTextView=view.findViewById(R.id.contactTextView);
         logoutButton = view.findViewById(R.id.logout_button);
         profile=view.findViewById(R.id.imageview);
-        contactTextView=view.findViewById(R.id.contactTextView);
-        contact=view.findViewById(R.id.contact);
 
         edit1=view.findViewById(R.id.imageView1);
         edit2=view.findViewById(R.id.imageView2);
         edit3=view.findViewById(R.id.imageView3);
         edit4=view.findViewById(R.id.imageView4);
         edit5=view.findViewById(R.id.imageView5);
-        edit6=view.findViewById(R.id.imageView6);
+        UserDatabase userDatabase = UserDatabase.getDB(getContext());
+        Bundle bundle = getArguments();
+        String uid = bundle.getString("uid");
+        List<User>idList=userDatabase.userDao().getByName(uid);
+        nameTextView.setText(idList.get(0).getUsername());
+        contactTextView.setText(idList.get(0).getContact());
 
-
+//        if(LoginActivity.employeeId.equals(userDatabase.userDao().getByName())) {
+//
+//            String name = userDatabase.userDao().getAllUser().get(0).getUsername();
+//            nameTextView.setText("" + name);
+//        }
         sharedPreference=requireContext().getSharedPreferences("share", Context.MODE_PRIVATE);
-
-        String name=sharedPreference.getString("Name","");
-        nameTextView.setText(""+name);
-
+//
+//        String name=sharedPreference.getString("Name","");
+//        nameTextView.setText(""+name);
+//
         String age=sharedPreference.getString("Age","");
         ageTextView.setText(""+age);
 
@@ -84,18 +97,7 @@ public class ProfileFragment extends Fragment {
         String soft=sharedPreference.getString("Soft Skills","");
         softSkillsTextView.setText(""+soft);
 
-        String contact1=sharedPreference.getString("Contact No","");
-        contactTextView.setText(""+contact1);
 
-
-
-        contact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(requireContext(), ContactActivity.class);
-                startActivity(intent);
-            }
-        });
 
         edit1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -310,42 +312,6 @@ public class ProfileFragment extends Fragment {
                 bottomSheetDialog.show();
             }
         });
-
-        edit6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_contact, null);
-                EditText editedContactEditText = bottomSheetView.findViewById(R.id.editText);
-                Button editButton = bottomSheetView.findViewById(R.id.addbutton);
-
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-                bottomSheetDialog.setContentView(bottomSheetView);
-
-                editButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String editedContact = editedContactEditText.getText().toString().trim();
-                        if (!editedContact.isEmpty()) {
-                            if (editedContact.length() == 10) {
-                                contactTextView.setText("" + editedContact);
-                                SharedPreferences.Editor editor = sharedPreference.edit();
-                                editor.putString("Contact No", editedContact);
-                                editor.apply();
-                                bottomSheetDialog.dismiss();
-                            } else if(editedContactEditText.length()!=10)  {
-                                editedContactEditText.setError("Please enter a 10-digit Contact Number");
-                            }
-                        } else {
-                            Toast.makeText(requireContext(), "Please enter a valid Contact Number", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                bottomSheetDialog.show();
-            }
-        });
-
-
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

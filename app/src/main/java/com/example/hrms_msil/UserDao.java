@@ -24,6 +24,10 @@ public interface UserDao {
 
  @Query(value = "SELECT * from user where email In (:email)")
  List<User>getByEmail(String email);
+
+ @Query(value="SELECT * FROM  user where uid In (:employeeId)")
+ List<User>getByName(String employeeId);
+
 //@Query(value="select * from user where uid=User.uid")
 // List<User>getMPin(int uid);
 }

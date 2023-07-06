@@ -9,16 +9,25 @@ public class User {
 
     @PrimaryKey(autoGenerate = true)
     public int uid;
+
+    @ColumnInfo(name = "username")
+    public String username;
     @ColumnInfo(name = "email")
-    public  String email;
+    public String email;
+    @ColumnInfo(name = "contact")
+    public String contact;
+
     @ColumnInfo(name = "mPin")
     public String mPin;
 
     public User() {
     }
 
-    public User(String email, String mPin) {
+    public User( String username, String email, String contact, String mPin) {
+
+        this.username = username;
         this.email = email;
+        this.contact = contact;
         this.mPin = mPin;
     }
 
@@ -26,15 +35,32 @@ public class User {
         return uid;
     }
 
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
 
+    public String getUsername() {
+        return username;
+    }
 
-    public  String getEmail() {
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
         return email;
     }
 
-
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public String getmPin() {

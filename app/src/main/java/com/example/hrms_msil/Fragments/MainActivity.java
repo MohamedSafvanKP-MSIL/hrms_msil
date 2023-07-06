@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         frameLayout = findViewById(R.id.frameLayout);
         snackLayout=findViewById(R.id.snackBar_layout);
@@ -50,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
         inboxFragment = new InboxFragment();
 
         setFragment(homeFragment);
+        String id=getIntent().getStringExtra("id");
+
+
+        Bundle bundle = new Bundle();
+        bundle.putString("uid", id);
+        profileFragment.setArguments(bundle);
+
+;
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -80,12 +89,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private void setFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
+
     private boolean checkConnection(){
         ConnectivityManager connectivityManager=(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();

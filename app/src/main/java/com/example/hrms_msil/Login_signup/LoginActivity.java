@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText mpinEditText;
     Button loginButton;
     TextView signupTextView;
-
+  public static  String employeeId;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String employeeId=employeeIdEditText.getText().toString();
+                 employeeId=employeeIdEditText.getText().toString();
                 if(employeeId.isEmpty()) {
                     employeeIdEditText.setError("Employee ID cant be empty");
 
@@ -82,8 +82,12 @@ public class LoginActivity extends AppCompatActivity {
                             Integer.parseInt(String.valueOf(employeeIdEditText.getText()))).collect(Collectors.toList());
 
                     if (filterdList.get(0).mPin.equals(String.valueOf(mpinEditText.getText()))) {
+
+//
                         Intent intent2 = new Intent(LoginActivity.this, MainActivity.class);
+                        intent2.putExtra("id",employeeIdEditText.getText().toString());
                         startActivity(intent2);
+
                     } else {
                         Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }

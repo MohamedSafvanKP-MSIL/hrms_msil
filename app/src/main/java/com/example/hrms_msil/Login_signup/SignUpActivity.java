@@ -22,6 +22,8 @@ import com.example.hrms_msil.UserDatabase;
 import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
+    private EditText usernameEditText;
+    private EditText contactEditText;
 
     private EditText emailEditText;
     private EditText mpinEditText;
@@ -36,6 +38,9 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         emailEditText = findViewById(R.id.email);
+        usernameEditText=findViewById(R.id.username);
+        contactEditText=findViewById(R.id.contact);
+
 
         mpinEditText = findViewById(R.id.mpin);
         confirmMpinEditText = findViewById(R.id.confirmmpin);
@@ -113,10 +118,11 @@ public class SignUpActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                String username = usernameEditText.getText().toString();
+                String contact = contactEditText.getText().toString();
                 String email = emailEditText.getText().toString();
                 String mpin = mpinEditText.getText().toString();
+
                 String confirmMpin = confirmMpinEditText.getText().toString();
                 if (email.isEmpty()) {
                     emailEditText.setError("Email field cannot be empty");
@@ -152,7 +158,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                               displaySignupSuccess(email);
 
-                              userDatabase.userDao().insertUser(new User(email, mpin));
+                              userDatabase.userDao().insertUser(new User(username,email,contact, mpin));
 
                               Log.d("message", String.valueOf(userDatabase.userDao().getAllUser().get(userDatabase.userDao().getAllUser().size() - 1).getUid()));
 
