@@ -28,6 +28,9 @@ public interface UserDao {
  @Query(value="SELECT * FROM  user where uid In (:employeeId)")
  List<User>getByName(String employeeId);
 
+ @Query("SELECT * FROM user WHERE username LIKE:searchQuery")
+ List<User> searchUser(String searchQuery);
+
 //@Query(value="select * from user where uid=User.uid")
 // List<User>getMPin(int uid);
 }
