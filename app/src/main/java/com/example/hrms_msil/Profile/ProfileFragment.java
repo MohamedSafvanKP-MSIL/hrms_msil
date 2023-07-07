@@ -42,7 +42,7 @@ public class ProfileFragment extends Fragment {
     private TextView softSkillsTextView;
     private TextView contactTextView;
     private Button logoutButton;
-    private ImageView profile,edit1,edit2,edit3,edit4,edit5,contact;
+    private ImageView profile,edit1,edit2,edit3,edit4,edit5,edit6,contact;
 
     private SharedPreferences sharedPreference;
 
@@ -70,6 +70,7 @@ public class ProfileFragment extends Fragment {
         edit3=view.findViewById(R.id.imageView3);
         edit4=view.findViewById(R.id.imageView4);
         edit5=view.findViewById(R.id.imageView5);
+        edit6=view.findViewById(R.id.imageView6);
         UserDatabase userDatabase = UserDatabase.getDB(getContext());
         Bundle bundle = getArguments();
         String uid = bundle.getString("uid");
@@ -321,6 +322,42 @@ public class ProfileFragment extends Fragment {
                 bottomSheetDialog.show();
             }
         });
+
+        edit6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_contact, null);
+                EditText editedContactEditText = bottomSheetView.findViewById(R.id.editText);
+                Button editButton = bottomSheetView.findViewById(R.id.addbutton);
+
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+                bottomSheetDialog.setContentView(bottomSheetView);
+
+                editButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String editedContact = editedContactEditText.getText().toString().trim();
+                        if (!editedContact.isEmpty()) {
+                            if (editedContact.length() == 10) {
+                                contactTextView.setText("" + editedContact);
+                                SharedPreferences.Editor editor = sharedPreference.edit();
+                                editor.putString("Contact No", editedContact);
+                                editor.apply();
+                                bottomSheetDialog.dismiss();
+                            } else if(editedContactEditText.length()!=10)  {
+                                editedContactEditText.setError("Please enter a 10-digit Contact Number");
+                            }
+                        } else {
+                            Toast.makeText(requireContext(), "Please enter a valid Contact Number", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                bottomSheetDialog.show();
+            }
+        });
+
+
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

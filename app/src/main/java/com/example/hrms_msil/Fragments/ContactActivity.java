@@ -77,6 +77,7 @@ public class ContactActivity extends AppCompatActivity implements ContactAdapter
         UserDatabase contactDatabase = UserDatabase.getDB(this);
         contactDao = contactDatabase.userDao();
 
+
         loadContacts("");
 
     }
@@ -99,6 +100,4 @@ public class ContactActivity extends AppCompatActivity implements ContactAdapter
             }
         }.execute(query);
     }
-
-
 }

@@ -20,6 +20,8 @@ public class User {
     @ColumnInfo(name = "mPin")
     public String mPin;
 
+
+
     public User() {
     }
 

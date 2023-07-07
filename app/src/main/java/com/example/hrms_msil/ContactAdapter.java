@@ -15,12 +15,10 @@ import java.util.List;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
     private static List<User> contactList;
-    private List<User> filteredList;
     private static OnItemClickListener itemClickListener;
 
     public ContactAdapter(List<User> contactList, OnItemClickListener itemClickListener) {
         this.contactList = contactList;
-        this.filteredList=new ArrayList<>(contactList);
         this.itemClickListener = itemClickListener;
     }
 
